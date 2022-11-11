@@ -3,12 +3,17 @@
 
 <div class="row">
     <div class="col">
-        <form>
+        <form (ngSubmit)="guardar( miFormulario )" #miFormulario="ngForm">
             <div class="mb-3 row">
                 <label for="producto" class="col-sm-2">Producto:</label>   
                 <div class="col-sm-10">         
                    
-                    <input type="text" class="form-control" id="producto" placeholder="Nombre del producto">
+                    <input type="text" 
+                    ngModel
+                    name="producto"
+                    class="form-control" 
+                    id="producto" 
+                    placeholder="Nombre del producto" required>
                     <span class="form-text text-danger">Debe de ser de 3 letras</span>
                 </div> 
             </div>
@@ -17,7 +22,12 @@
                 <label for="precio" class="col-sm-2">Precio:</label>   
                 <div class="col-sm-10">         
                    
-                    <input type="number" class="form-control" id="precio" placeholder="Precio del producto">
+                    <input type="number" 
+                    ngModel
+                    name="precio"
+                    class="form-control" 
+                    id="precio" 
+                    placeholder="Precio del producto">
                     <span class="form-text text-danger"></span>
                 </div> 
             </div>
@@ -25,7 +35,12 @@
                 <label for="stock" class="col-sm-2">Stock:</label>   
                 <div class="col-sm-10">         
                    
-                    <input type="number" class="form-control" id="stock" placeholder="Stock del producto">
+                    <input type="number" 
+                    ngModel
+                    name="stock"
+                    class="form-control" 
+                    id="stock" 
+                    placeholder="Stock del producto">
                     <span class="form-text text-danger"></span>
                 </div> 
             </div>
@@ -40,5 +55,15 @@
 
         </form>
 
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p>Valid</p>
+        <pre> {{ miFormulario.valid }}</pre>
+    </div>
+    <div class="col">
+        <p>Value</p>
+        <pre> {{ miFormulario.value | json }}</pre>
     </div>
 </div>
