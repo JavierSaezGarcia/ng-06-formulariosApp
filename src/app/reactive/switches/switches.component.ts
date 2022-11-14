@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-switches',
@@ -6,11 +7,43 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class SwitchesComponent implements OnInit {
+export class SwitchesComponent implements OnInit{
 
-  constructor() { }
+  miFormulario: FormGroup = this.fb.group({
+    // [ valor  por defecto del campo, validadores sincronos(si hay mas de uno van en un array), validadores asincronos]
+    genero: ['M', Validators.required],
+    notificaciones: [true, Validators.required],
+    condiciones: [ false, Validators.requiredTrue] 
 
-  ngOnInit(): void {
+  });
+
+  persona = {
+    genero: 'F',
+    notificaciones: true
   }
 
+  // inyectamos FormBuilder en el constructor
+  constructor( private fb: FormBuilder ) { }
+  
+  ngOnInit() {
+    this.miFormulario.reset({
+      ...this.persona,
+      condiciones: false
+    });
+    
+   
+
+    this.miFormulario.valueChanges.subscribe( ({ condiciones, ...restoDeArgumentos}) => {
+      //delete form.condiciones;
+      this.persona = restoDeArgumentos;
+    })
+  }
+
+  guardar() {
+    const formValue = { ...this.miFormulario.value }; 
+    delete formValue.condiciones;
+    this.persona = formValue;
+    
+  }
+  
 }
