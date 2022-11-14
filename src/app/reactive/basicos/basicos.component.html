@@ -1,1 +1,77 @@
-<p>basicos works!</p>
+<h2>Reactivos Básicos</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <form autocomplete="off">
+            <div class="mb-3 row">
+                <label for="producto" class="col-sm-2">Producto:</label>   
+                <div class="col-sm-10">                
+                    <input type="text"               
+                    class="form-control" 
+                    id="producto" 
+                    placeholder="Nombre del producto" minlength="3">
+                    <span class="form-text text-danger">Debe de ser de al menos 3 letras</span>
+                </div> 
+            </div>
+
+            <div class="mb-3 row">
+                <label for="precio" class="col-sm-2">Precio:</label>   
+                <div class="col-sm-10">                   
+                    <input type="number"              
+                    class="form-control" 
+                    id="precio" 
+                    placeholder="Precio del producto"
+                    min="0">                    
+                    <span class="form-text text-danger">El precio debe ser 0 o mayor</span>
+                </div> 
+            </div>
+            <div class="mb-3 row">
+                <label for="stock" class="col-sm-2">Stock:</label>   
+                <div class="col-sm-10">      
+                   
+                    <input type="number" 
+                   
+                    name="stock"
+                    class="form-control" 
+                    id="stock" 
+                    placeholder="Stock del producto">
+                    <span class="form-text text-danger"></span>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary float-end" 
+                    type="submit">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+              
+
+        </form>
+
+    </div>
+</div>
+<div class="row">
+    <!-- <div class="col">
+        <p>Valid: si has rellenado los campos obligatorios</p>
+        <pre> {{ miFormulario.valid }}</pre>
+    </div>
+    <div class="col">
+        <p>Pristine: es que no se han cambiado ningun valor</p>
+        <pre> {{ miFormulario.pristine }}</pre>
+    </div>
+    <div class="col">
+        <p>Touched: si el usuario ha tocado el usuario</p>
+        <pre> {{ miFormulario.touched }}</pre>
+    </div>
+    <div class="col">
+        <p>Value</p>
+        <pre> {{ miFormulario.value | json }}</pre>
+    </div>
+    <div class="col">
+        <p>CustomDirective</p>
+        <pre> {{ miFormulario.controls['stock'].errors | json }}</pre>
+    </div> -->
+</div>

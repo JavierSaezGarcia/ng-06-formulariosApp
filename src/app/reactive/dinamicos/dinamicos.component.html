@@ -1,1 +1,64 @@
-<p>dinamicos works!</p>
+<h2>Reactivos Dinámicos</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <form autocomplete="off">
+            <!-- Nombre -->
+            <div class="mb-3 row">
+                <label class="col-sm-2">Nombre:</label>   
+                <div class="col-sm-10">        
+                   
+                    <input type="text" 
+                        class="form-control"                     
+                        placeholder="Nombre de la persona">
+                    <span class="form-text text-danger">Este campo es obligatorio</span>
+                </div> 
+            </div>
+            <!-- Agregar favorito -->
+            <div class="mb-3 row">
+                <label class="col-sm-2">Agregar:</label> 
+                <div class="col-sm-10">       
+                    <div class="input-group mb-3">
+                        <input  
+                        (keyup.enter)="null" 
+                        type="text" 
+                        class="form-control"
+                        placeholder="Agregar juego favorito" 
+                        aria-label="Agregar"
+                         aria-describedby="button-addon2">
+                        <button (click)="null" class="btn btn-outline-primary" type="button" id="button-addon2">Agregar</button>
+                    </div>
+                </div>
+            </div> 
+            <!-- Lista de juegos favoritos -->
+            <div class="mb-3 row">
+                <label class="col-sm-2">Favoritos:</label>   
+                <div class="col-sm-10">   
+                    <!-- <div class="input-group">         
+                       
+                        <div class="input-group mb-1">
+                            <input [(ngModel)]="juego.nombre" name="favorito_{{ i }}" type="text" class="form-control" placeholder="Eliminar" aria-label="Eliminar" aria-describedby="button-delete">
+                            <button class="btn btn-outline-danger" type="button" id="button-delete" (click)="null">Borrar</button>
+                        </div>
+                    </div> -->
+                    
+                </div> 
+            </div>
+           
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary float-end" 
+                    type="button"                    
+                    
+                    (click)="null"
+                    >
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+        <span>Persona</span>
+        <!-- <pre>{{ persona | json }}</pre> -->
+    </div>
+</div>
