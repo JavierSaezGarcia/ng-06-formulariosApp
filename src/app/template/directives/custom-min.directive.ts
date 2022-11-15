@@ -18,12 +18,11 @@ export class CustomMinDirective implements Validator{
     @Input() minimo!: number;
 
     constructor() {
-        console.log('Directiva',this.minimo);
+        //console.log('Directiva',this.minimo);
     }
 
     validate( control: FormControl ) { 
-        const inputValue = control.value;
-        
+        const inputValue = control.value;        
         return ( inputValue < this.minimo )  ? {'customMin': true} : null;
      
     }

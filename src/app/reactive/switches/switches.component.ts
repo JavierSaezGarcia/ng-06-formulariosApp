@@ -11,9 +11,9 @@ export class SwitchesComponent implements OnInit{
 
   miFormulario: FormGroup = this.fb.group({
     // [ valor  por defecto del campo, validadores sincronos(si hay mas de uno van en un array), validadores asincronos]
-    genero: ['M', Validators.required],
-    notificaciones: [true, Validators.required],
-    condiciones: [ false, Validators.requiredTrue] 
+    genero: ['M', [Validators.required]],
+    notificaciones: [true,[Validators.required]],
+    condiciones: [ false, [Validators.requiredTrue]] 
 
   });
 

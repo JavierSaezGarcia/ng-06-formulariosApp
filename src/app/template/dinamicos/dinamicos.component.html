@@ -17,7 +17,7 @@
                     required 
                     
                     >
-                    <span *ngIf="miFormulario.controls['nombre'].errors && miFormulario.controls['nombre'].touched && miFormulario.controls['nombre'].invalid" class="form-text text-danger">Este campo es obligatorio</span>
+                    <span *ngIf="miFormulario.controls['nombre']?.errors && miFormulario.controls['nombre']?.touched && miFormulario.controls['nombre']?.invalid" class="form-text text-danger">Este campo es obligatorio</span>
                 </div> 
             </div>
             <!-- Agregar favorito -->

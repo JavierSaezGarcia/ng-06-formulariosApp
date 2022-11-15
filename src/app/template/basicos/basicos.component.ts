@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class BasicosComponent implements OnInit {
 
-  @ViewChild('miFormulario') miFormulario!: NgForm;
+  @ViewChild('miFormulario', { static: true} ) miFormulario!: NgForm;
 
   initForm = {
     producto: '',
@@ -24,12 +24,12 @@ export class BasicosComponent implements OnInit {
 
   nombreValido(): boolean {
    
-      return this.miFormulario?.controls['producto'].invalid && this.miFormulario?.controls['producto'].touched;
+      return this.miFormulario.controls['producto']?.invalid && this.miFormulario.controls['producto'].touched;
     
   }
   precioValido(): boolean {
     
-       return this.miFormulario?.controls['precio'].value < 0 && this.miFormulario?.controls['precio'].touched
+       return this.miFormulario.controls['precio']?.value < 0 && this.miFormulario!.controls['precio'].touched
        
       
       

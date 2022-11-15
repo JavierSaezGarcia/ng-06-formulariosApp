@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-
+// path de LAZY LOAD para cargar hijos
 const routes: Routes = [
   {
     path: 'template', 
@@ -13,6 +13,11 @@ const routes: Routes = [
     path: 'reactive', 
     // esto carga los modulos hijos de reactive
     loadChildren: () => import('./reactive/reactive.module').then( m => m.ReactiveModule)
+  },
+  {
+    path: 'auth', 
+    // esto carga los modulos hijos de auth
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
   },
   {
     path:'**',
